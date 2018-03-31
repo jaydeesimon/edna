@@ -68,7 +68,7 @@
   (if-not play?
     [nil parent-attrs]
     (let [id (inc (or sibling-id 0))
-          {:keys [note accidental octave-op octaves]} (parse/parse-note note)
+          {:keys [note [accidental] octave-op octaves]} (parse/parse-note note)
           note (keyword (str note))
           accidental (case accidental
                        \# :sharp
